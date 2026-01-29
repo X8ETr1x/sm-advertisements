@@ -1,5 +1,7 @@
 # SourceMod: Advertisements
 
+A fork of [DJ Tsunami's plugin](https://forums.alliedmods.net/showthread.php?t=155705).
+
 This is a simple advertisements plugin. It supports center, chat, hint, menu and top messages.
 
 ## Usage
