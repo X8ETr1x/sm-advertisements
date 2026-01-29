@@ -1,24 +1,23 @@
-#include <sourcemod>
-#undef REQUIRE_PLUGIN
-#include <mapchooser>
-#include <updater>
-
 #pragma newdecls required
 #pragma semicolon 1
 
-#include "advertisements/chatcolors.sp"
-#include "advertisements/topcolors.sp"
 
-#define PL_VERSION	"2.1.2"
-#define UPDATE_URL	"http://ErikMinekus.github.io/sm-advertisements/update.txt"
+#include <sourcemod>
+#undef REQUIRE_PLUGIN
+#include <mapchooser>
+
+#include "include/chatcolors.inc"
+#include "include/topcolors.inc"
+
+#define PL_VERSION	"2.1.3"
 
 public Plugin myinfo =
 {
     name        = "Advertisements",
-    author      = "Tsunami",
+    author      = "Tsunami, X8ETr1x",
     description = "Display advertisements",
     version     = PL_VERSION,
-    url         = "http://www.tsunami-productions.nl"
+    url         = "https://github.com/X8ETr1x/sm-advertisements/"
 };
 
 
@@ -72,9 +71,6 @@ public void OnPluginStart()
     AddChatColors();
     AddTopColors();
 
-    if (LibraryExists("updater")) {
-        Updater_AddPlugin(UPDATE_URL);
-    }
 }
 
 public void OnConfigsExecuted()
@@ -87,9 +83,6 @@ public void OnLibraryAdded(const char[] name)
 {
     if (StrEqual(name, "mapchooser")) {
         g_bMapChooser = true;
-    }
-    if (StrEqual(name, "updater")) {
-        Updater_AddPlugin(UPDATE_URL);
     }
 }
 
