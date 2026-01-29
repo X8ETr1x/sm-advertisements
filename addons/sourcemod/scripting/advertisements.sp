@@ -9,7 +9,7 @@
 #include "include/chatcolors.inc"
 #include "include/topcolors.inc"
 
-#define PL_VERSION	"2.1.3"
+#define PL_VERSION	"2.2.0"
 
 public Plugin myinfo =
 {
@@ -70,6 +70,8 @@ public void OnPluginStart()
 
     AddChatColors();
     AddTopColors();
+    
+    AutoExecConfig(true);
 
 }
 
